@@ -1,0 +1,8 @@
+.date {
+  font-size: 22px;
+  font-weight: 300;
+  text-shadow: 2px 2px rgba(50, 50, 75, 0.5);
+  font-style: italic;
+  text-align: center;
+  color: white;
+}
