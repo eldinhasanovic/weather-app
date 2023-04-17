@@ -11,14 +11,13 @@ function App() {
   const [weather, setWeather] = useState({});
   const search = (evt) => {
     if (evt.key === "Enter") {
-      fetch(
-        `${api.base}forecast?id=${query}&units=metric&appid=${api.key}`
-      ).then((res) =>
-        res.json().then((result) => {
-          setWeather(result);
-          setQuery("");
-          console.log(weather);
-        })
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`).then(
+        (res) =>
+          res.json().then((result) => {
+            setWeather(result);
+            setQuery("");
+            console.log(weather);
+          })
       );
     }
   };
@@ -36,7 +35,9 @@ function App() {
           />
         </div>
         <div className="location-box">
-          <div className="location">Novi Pazar, Serbia</div>
+          <div className="location">
+            {/* {weather.name}, {weather.sys.country}{" "} */}
+          </div>
           <Vreme />
         </div>
         <div className="weather-box">
